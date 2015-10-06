@@ -12,7 +12,7 @@ public class Control {
         System.out.println("Ejemplo de Integer\n");
         Input input = new Input();
         Histogram<Integer> histogram = new Histogram<>(input.getIntegerArray());
-        new Output<>(histogram.getHashMap()).print();
+        new Output<>(histogram).print();
         System.out.println("\nFin ejemplo\n\n");
     }
 
@@ -20,7 +20,7 @@ public class Control {
         System.out.println("Ejemplo de String\n");
         Input input = new Input();
         Histogram<String> histogram = new Histogram<>(input.getStringArray());
-        new Output<>(histogram.getHashMap()).print();
+        new Output<>(histogram).print();
         System.out.println("\nFin ejemplo");
     }
 }
