@@ -5,8 +5,7 @@ public class Control {
 
     public void control() {
         int[] array = new Input().getArray();
-        Process process = new Process(array);
-        process.process();
-        new Output(process.getHistogram()).print();
+        Histogram histogram = new Histogram(array);
+        new Output(histogram.getHashMap()).print();
     }
 }
