@@ -3,29 +3,29 @@ import java.util.HashMap;
 /**
  * Created by Gabriel on 06/10/2015.
  */
-public class Histogram {
+public class Histogram<T> {
 
-    private int[] array;
-    private HashMap<Integer, Integer> hashMap;
+    private T[] array;
+    private HashMap<T, Integer> hashMap;
 
-    public Histogram(int[] array) {
+    public Histogram(T[] array) {
         this.array = array;
         hashMap = new HashMap<>();
         process();
     }
 
     private void process(){
-        for(int current : array){
+        for(T current : array){
             hashMap.put(current, hashMap.containsKey(current)? hashMap.get(current)+1 : 1);
         }
     }
 
     @SuppressWarnings("unused")
-    public int[] getArray() {
+    public T[] getArray() {
         return array;
     }
 
-    public HashMap<Integer, Integer> getHashMap() {
+    public HashMap<T, Integer> getHashMap() {
         return hashMap;
     }
 }
