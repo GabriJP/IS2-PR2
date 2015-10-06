@@ -1,31 +1,23 @@
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by Gabriel on 06/10/2015.
  */
 public class Histogram<T> {
 
-    private T[] array;
-    private HashMap<T, Integer> hashMap;
+    private final Map<T, Integer> map = new HashMap<>();
 
-    public Histogram(T[] array) {
-        this.array = array;
-        hashMap = new HashMap<>();
-        process();
+    public Integer get(Object key){
+        return map.get(key);
     }
 
-    private void process(){
-        for(T current : array){
-            hashMap.put(current, hashMap.containsKey(current)? hashMap.get(current)+1 : 1);
-        }
+    public Set<T> keySet(){
+        return map.keySet();
     }
 
-    @SuppressWarnings("unused")
-    public T[] getArray() {
-        return array;
-    }
-
-    public HashMap<T, Integer> getHashMap() {
-        return hashMap;
+    public void increment(T key){
+        map.put(key, map.containsKey(key)? map.get(key)+1 : 1);
     }
 }
