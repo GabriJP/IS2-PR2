@@ -16,7 +16,6 @@ public class Control {
         for(Object key : histogram.keySet()){
             System.out.println(key + " : " + histogram.get(key));
         }
-
         System.out.println("\nFin ejemplo\n\n");
     }
 
